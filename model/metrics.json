@@ -1,0 +1,761 @@
+{
+  "feature_reference": {
+    "amount": {
+      "median": 75701.43,
+      "std": 641086.4787154357
+    },
+    "oldbalanceOrg": {
+      "median": 13972.0,
+      "std": 2922153.8672791915
+    },
+    "newbalanceOrig": {
+      "median": 0.0,
+      "std": 2958905.231345275
+    },
+    "oldbalanceDest": {
+      "median": 136465.32,
+      "std": 3143209.983426568
+    },
+    "newbalanceDest": {
+      "median": 219713.33,
+      "std": 3486553.5063139563
+    },
+    "errorBalanceOrig": {
+      "median": -69910.82,
+      "std": 647118.9976707541
+    },
+    "errorBalanceDest": {
+      "median": 3461.5,
+      "std": 481872.38051556586
+    },
+    "hour_of_day": {
+      "median": 15.0,
+      "std": 4.254088993283695
+    },
+    "day": {
+      "median": 8.0,
+      "std": 4.365681296908244
+    },
+    "txn_count_24h": {
+      "median": 0.0,
+      "std": 0.01346334970159735
+    },
+    "txn_amount_sum_24h": {
+      "median": 0.0,
+      "std": 22863.264154854613
+    },
+    "type_CASH_IN": {
+      "median": 0.0,
+      "std": 0.4138742748807328
+    },
+    "type_CASH_OUT": {
+      "median": 0.0,
+      "std": 0.47835575970606964
+    },
+    "type_DEBIT": {
+      "median": 0.0,
+      "std": 0.07947422001094086
+    },
+    "type_PAYMENT": {
+      "median": 0.0,
+      "std": 0.47256705841889174
+    },
+    "type_TRANSFER": {
+      "median": 0.0,
+      "std": 0.2759633216938065
+    }
+  },
+  "trained_at": "2026-08-31 00:37:52",
+  "n_train": 5069097,
+  "n_test": 1293523,
+  "split_step_cutoff": 355.0,
+  "precision": 0.9893097838717174,
+  "recall": 0.9997651479567872,
+  "f1": 0.9945099871510338,
+  "pr_auc": 0.9998898537735198,
+  "threshold": 0.06999999999999999,
+  "cost_at_threshold": 354058.22,
+  "cost_naive_half": 752939.3,
+  "cost_flag_nothing": 6702594765.36,
+  "cost_per_false_positive": 4.0,
+  "feature_columns": [
+    "amount",
+    "oldbalanceOrg",
+    "newbalanceOrig",
+    "oldbalanceDest",
+    "newbalanceDest",
+    "errorBalanceOrig",
+    "errorBalanceDest",
+    "hour_of_day",
+    "day",
+    "txn_count_24h",
+    "txn_amount_sum_24h",
+    "type_CASH_IN",
+    "type_CASH_OUT",
+    "type_DEBIT",
+    "type_PAYMENT",
+    "type_TRANSFER"
+  ],
+  "top_features": [
+    {
+      "feature": "errorBalanceOrig",
+      "importance": 0.9953285534218462
+    },
+    {
+      "feature": "newbalanceOrig",
+      "importance": 0.9871906494040035
+    },
+    {
+      "feature": "amount",
+      "importance": 0.03390789136062884
+    },
+    {
+      "feature": "errorBalanceDest",
+      "importance": 0.0025542784163473664
+    },
+    {
+      "feature": "oldbalanceOrg",
+      "importance": 0.0
+    },
+    {
+      "feature": "oldbalanceDest",
+      "importance": 0.0
+    },
+    {
+      "feature": "newbalanceDest",
+      "importance": 0.0
+    },
+    {
+      "feature": "hour_of_day",
+      "importance": 0.0
+    },
+    {
+      "feature": "day",
+      "importance": 0.0
+    },
+    {
+      "feature": "txn_count_24h",
+      "importance": 0.0
+    },
+    {
+      "feature": "txn_amount_sum_24h",
+      "importance": 0.0
+    },
+    {
+      "feature": "type_CASH_IN",
+      "importance": 0.0
+    },
+    {
+      "feature": "type_CASH_OUT",
+      "importance": 0.0
+    },
+    {
+      "feature": "type_DEBIT",
+      "importance": 0.0
+    },
+    {
+      "feature": "type_PAYMENT",
+      "importance": 0.0
+    },
+    {
+      "feature": "type_TRANSFER",
+      "importance": 0.0
+    }
+  ],
+  "threshold_sweep": [
+    {
+      "threshold": 0.01,
+      "cost": 355970.22,
+      "n_fp": 524,
+      "n_fn": 1
+    },
+    {
+      "threshold": 0.02,
+      "cost": 354934.22,
+      "n_fp": 265,
+      "n_fn": 1
+    },
+    {
+      "threshold": 0.03,
+      "cost": 354254.22,
+      "n_fp": 95,
+      "n_fn": 1
+    },
+    {
+      "threshold": 0.04,
+      "cost": 354202.22,
+      "n_fp": 82,
+      "n_fn": 1
+    },
+    {
+      "threshold": 0.05,
+      "cost": 354090.22,
+      "n_fp": 54,
+      "n_fn": 1
+    },
+    {
+      "threshold": 0.060000000000000005,
+      "cost": 354086.22,
+      "n_fp": 53,
+      "n_fn": 1
+    },
+    {
+      "threshold": 0.06999999999999999,
+      "cost": 354058.22,
+      "n_fp": 46,
+      "n_fn": 1
+    },
+    {
+      "threshold": 0.08,
+      "cost": 354058.22,
+      "n_fp": 46,
+      "n_fn": 1
+    },
+    {
+      "threshold": 0.09,
+      "cost": 753075.3,
+      "n_fp": 39,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.09999999999999999,
+      "cost": 753075.3,
+      "n_fp": 39,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.11,
+      "cost": 753075.3,
+      "n_fp": 39,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.12,
+      "cost": 753075.3,
+      "n_fp": 39,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.13,
+      "cost": 753075.3,
+      "n_fp": 39,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.14,
+      "cost": 753027.3,
+      "n_fp": 27,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.15000000000000002,
+      "cost": 753027.3,
+      "n_fp": 27,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.16,
+      "cost": 753019.3,
+      "n_fp": 25,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.17,
+      "cost": 753019.3,
+      "n_fp": 25,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.18000000000000002,
+      "cost": 753015.3,
+      "n_fp": 24,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.19,
+      "cost": 753015.3,
+      "n_fp": 24,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.2,
+      "cost": 753015.3,
+      "n_fp": 24,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.21000000000000002,
+      "cost": 753015.3,
+      "n_fp": 24,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.22,
+      "cost": 753003.3,
+      "n_fp": 21,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.23,
+      "cost": 753003.3,
+      "n_fp": 21,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.24000000000000002,
+      "cost": 753003.3,
+      "n_fp": 21,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.25,
+      "cost": 753003.3,
+      "n_fp": 21,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.26,
+      "cost": 753003.3,
+      "n_fp": 21,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.27,
+      "cost": 753003.3,
+      "n_fp": 21,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.28,
+      "cost": 753003.3,
+      "n_fp": 21,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.29000000000000004,
+      "cost": 753003.3,
+      "n_fp": 21,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.3,
+      "cost": 753003.3,
+      "n_fp": 21,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.31,
+      "cost": 752971.3,
+      "n_fp": 13,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.32,
+      "cost": 752971.3,
+      "n_fp": 13,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.33,
+      "cost": 752971.3,
+      "n_fp": 13,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.34,
+      "cost": 752963.3,
+      "n_fp": 11,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.35000000000000003,
+      "cost": 752963.3,
+      "n_fp": 11,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.36000000000000004,
+      "cost": 752963.3,
+      "n_fp": 11,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.37,
+      "cost": 752963.3,
+      "n_fp": 11,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.38,
+      "cost": 752959.3,
+      "n_fp": 10,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.39,
+      "cost": 752959.3,
+      "n_fp": 10,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.4,
+      "cost": 752959.3,
+      "n_fp": 10,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.41000000000000003,
+      "cost": 752959.3,
+      "n_fp": 10,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.42000000000000004,
+      "cost": 752959.3,
+      "n_fp": 10,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.43,
+      "cost": 752959.3,
+      "n_fp": 10,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.44,
+      "cost": 752959.3,
+      "n_fp": 10,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.45,
+      "cost": 752959.3,
+      "n_fp": 10,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.46,
+      "cost": 752959.3,
+      "n_fp": 10,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.47000000000000003,
+      "cost": 752947.3,
+      "n_fp": 7,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.48000000000000004,
+      "cost": 752947.3,
+      "n_fp": 7,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.49,
+      "cost": 752943.3,
+      "n_fp": 6,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.5,
+      "cost": 752939.3,
+      "n_fp": 5,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.51,
+      "cost": 752939.3,
+      "n_fp": 5,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.52,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.53,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.54,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.55,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.56,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.5700000000000001,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.5800000000000001,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.59,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.6,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.61,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.62,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.63,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.64,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.65,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.66,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.67,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.68,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.6900000000000001,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.7000000000000001,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.7100000000000001,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.72,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.73,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.74,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.75,
+      "cost": 752935.3,
+      "n_fp": 4,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.76,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.77,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.78,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.79,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.8,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.81,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.8200000000000001,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.8300000000000001,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.8400000000000001,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.85,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.86,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.87,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.88,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.89,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.9,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.91,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.92,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.93,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.9400000000000001,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.9500000000000001,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.9600000000000001,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.97,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.98,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    },
+    {
+      "threshold": 0.99,
+      "cost": 752919.3,
+      "n_fp": 0,
+      "n_fn": 2
+    }
+  ]
+}
