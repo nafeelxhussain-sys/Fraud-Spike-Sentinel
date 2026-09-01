@@ -65,7 +65,7 @@ class AccountStats:
     txn_count_24h: float
     txn_amount_sum_24h: float
 
-def record_transactions(conn, name_orig, step, amount, txn_type):
+def record_transaction(conn, name_orig, step, amount, txn_type):
     conn.execute(
         "INSERT INTO transactions (name_orig, step, amount, type) VALUES (?,?,?,?)",
         (name_orig, step, amount, txn_type),

@@ -19,8 +19,8 @@ from sklearn.metrics import average_precision_score, precision_recall_curve, pre
 from src.features import build_training_features, FEATURE_COLUMNS
 
 #  BUSINESS CONSTANTS
-COST_PER_FALSE_POSITIVE = 4.0       #marking a legit txn as fraud 
-COST_PER_FALSE_NEGATIVE = 1.0       #marking a fraud txn as legit
+COST_PER_FALSE_POSITIVE = 10.0       #marking a legit txn as fraud 
+COST_PER_FALSE_NEGATIVE = 1.5        #marking a fraud txn as legit
 
 def time_based_split(df: pd.DataFrame, test_fraction: float = 0.2):
     cutoff = df["step"].quantile(1 - test_fraction)
