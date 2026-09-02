@@ -45,7 +45,7 @@ CREATE INDEX IF NOT EXISTS idx_log_account
 
 
 def init_db(path):
-    conn = sql.connect(path)
+    conn = sql.connect(path,check_same_thread=False)
     conn.executescript(SCHEMA)
     conn.commit()
     return conn

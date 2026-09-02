@@ -67,20 +67,22 @@ class FraudScorer:
         contribution = [] 
 
         for feat in FEATURE_COLUMNS:
-            median = self.feature_reference[feat]["median"]
-            std = self.feature_reference[feat]["std"] or 1
-            value = feature_row[feat].iloc[0]
+            ref = self.feature_reference.get(feat, {"median": 0.0, "std": 1.0})
+            median = ref["median"]
+            std = ref["std"] or 1.0
+            
+            value = float(feature_row[feat].iloc[0])
 
-            z_score = abs((value - median)/std)
+            z_score = abs((value - median) / std)
             importance = self.importance_by_features.get(feat, 0.0)
 
             contribution.append({
                 "feature": feat,
-                "value":round(value,2),
-                "typical_value": round(median,2),
-                "deviation_z": round(z_score,2),
-                "importance":round(importance,4),
-                "contribution": round(z_score*importance,4),
+                "value": round(value, 2),
+                "typical_value": round(median, 2),
+                "deviation_z": round(z_score, 2),
+                "importance": round(importance, 4),
+                "contribution": round(z_score * importance, 4),
             })
 
         contribution.sort(key=lambda x : -x["contribution"])
@@ -105,20 +107,21 @@ class FraudScorer:
 
 
         contri_feat = self._explain(row)
+        contri_feat_json = json.dumps(contri_feat)
 
         log_score(
             conn, 
-            row["nameOrig"], 
-            row["step"], 
-            row["amount"],
+            txn["nameOrig"], 
+            txn["step"], 
+            txn["amount"],
             proba,
             self.threshold,
             decision,
-            contri_feat
+            contri_feat_json
         )
         
         if record:
-            record_transaction(conn,row["nameOrig"], row["step"], row["amount"],row["txn_type"])
+            record_transaction(conn,txn["nameOrig"], txn["step"], txn["amount"],txn["type"])
         
         return {
             "score":proba,
