@@ -7,4 +7,5 @@ venv/
 .DS_Store
 data/*.csv
 *.db
-
+.env
+.*
