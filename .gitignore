@@ -8,3 +8,4 @@ venv/
 data/*.csv
 *.db
 .env
+src/test.*

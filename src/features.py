@@ -49,27 +49,27 @@ def add_velocity_features_batch(df, window_hours = 24):
     df["txn_count_24h"] = (count_incl - 1).clip(lower=0).values
     df["txn_amount_sum_24h"] = (sum_incl - df["amount"]).clip(lower=0).values
 
-    df.drop(columns=["_ts"])
+    df = df.drop(columns=["_ts"])
     return df
 
 
 FEATURE_COLUMNS = [
     "amount",
     "oldbalanceOrg",
-    "newbalanceOrig",
     "oldbalanceDest",
-    "newbalanceDest",
-    "errorBalanceOrig",
-    "errorBalanceDest",
     "hour_of_day",
     "day",
     "txn_count_24h",
     "txn_amount_sum_24h",
+    # "newbalanceOrig",
+    # "newbalanceDest",
+    # "errorBalanceOrig",
+    # "errorBalanceDest",
 ] + [f"type_{t}" for t in TXN_TYPES]
 
 
 def build_training_features(df):
-    df = add_balance_error_features(df)
+    # df = add_balance_error_features(df)
     df = add_time_features(df)
     df = add_type_dummies(df)
     df = add_velocity_features_batch(df)
