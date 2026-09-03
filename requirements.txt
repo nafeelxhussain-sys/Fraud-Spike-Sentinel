@@ -7,4 +7,4 @@ uvicorn[standard]>=0.27
 streamlit>=1.32
 requests>=2.31
 pytest>=8.0
-xgboost>=2.0
+plotly
