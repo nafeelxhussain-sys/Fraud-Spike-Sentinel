@@ -67,6 +67,10 @@ def decision_badge(decision: str) -> str:
     d = decision if decision in DECISION_COLORS else "MONITOR"
     return f'<span class="decision-badge badge-{d}">{decision}</span>'
 
+@st.cache_data
+def load_data(path: str):
+    return pd.read_csv(path)
+
 
 def load_metrics():
     p = Path("model/metrics.json")
@@ -113,7 +117,7 @@ with tab_live:
     def live_feed_fragment():
         if st.session_state.streaming:
             try:
-                df = pd.read_csv(DATA_PATH)
+                df = load_data(DATA_PATH)
             except FileNotFoundError:
                 st.error(f"Couldn't find {DATA_PATH}")
                 df = None

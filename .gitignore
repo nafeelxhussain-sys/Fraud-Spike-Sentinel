@@ -7,5 +7,6 @@ venv/
 .DS_Store
 data/*.csv
 *.db
+history.*
 .env
 src/test.*

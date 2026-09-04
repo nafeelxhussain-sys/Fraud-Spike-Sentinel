@@ -9,3 +9,4 @@ requests>=2.31
 pytest>=8.0
 XGboost>=2.0
 plotly
+groq

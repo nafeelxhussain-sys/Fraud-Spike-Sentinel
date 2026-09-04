@@ -27,3 +27,5 @@ current transaction, then subtracting the transactions own contribution.
 
 11. The threshold was being chosen and evaluated on the same held-out test set which resulted in subtle form of leakage that flatters the reported numbers by however much the threshold search could exploit that specific slice. Fixed with a proper 3-way time split: threshold picked on validation, final metrics reported on test, which never influenced it, and the training was done on training set.
 
+12. Adding catched data in stream made the scoring function work lightining fast.
+
