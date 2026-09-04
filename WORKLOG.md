@@ -29,3 +29,4 @@ current transaction, then subtracting the transactions own contribution.
 
 12. Adding catched data in stream made the scoring function work lightining fast.
 
+13. I replaced the localhost URL with 127.0.0.1 in the API configurations to bypass a Windows IPv6 DNS resolution timeout that was delaying every request

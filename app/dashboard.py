@@ -14,7 +14,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Fraud-Spike Sentinel", page_icon="\U0001F6E1\uFE0F", layout="wide")
 
-API_URL = st.sidebar.text_input("API URL", value="http://localhost:8000")
+API_URL = st.sidebar.text_input("API URL", value="http://127.0.0.1:8000")
 DATA_PATH = st.sidebar.text_input("Replay data file", value="data/paysim.csv")
 
 DECISION_COLORS = {

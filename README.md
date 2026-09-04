@@ -17,7 +17,7 @@ Held out on a **time-based split** (train → validation → test, chronological
 | Decision threshold | **0.87** (cost-optimal, not F1-optimal) |
 | Dataset | [PaySim](https://www.kaggle.com/datasets/ealaxi/paysim1) — 6,362,620 real transactions, 8,213 fraud (0.129%) |
 | Model | XGBoost, `scale_pos_weight` = neg/pos ratio, 100 trees, depth 5, lr 0.1 |
-| Scoring throughput | 92 transactions/sec |
+| Scoring throughput | 110 transactions/sec |
 
 **In plain terms:** at this threshold, roughly 1 in 3 blocked transactions is genuinely fraud, and the system catches ~90% of all real fraud in the held-out data. That's a deliberately conservative operating point for a hard BLOCK decision — the MONITOR/REVIEW states below exist specifically to catch the medium-confidence cases before they'd ever need to clear that bar alone.
 
@@ -81,7 +81,8 @@ Trained on PaySim, a synthetic mobile-money simulator, not real merchant payment
 
 | Name | Throughput | 
 | -------- | -------- | 
-| API's /score | 92.32 | 
+| API's /score | 125.23 | 
+| Throughput | 110 | 
 
 Two concrete things were done to make this fast, not just fast enough to demo:
 - Live scoring computes features with direct arithmetic instead of routing through the batch pandas pipeline used for training — the batch pipeline's repeated `DataFrame.copy()` calls are correct for transforming millions of training rows at once, and pure overhead for one live transaction.
